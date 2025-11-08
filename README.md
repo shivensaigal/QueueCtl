@@ -199,7 +199,7 @@ java -jar target/queuectl.jar worker status
 java -jar target/queuectl.jar worker stop
 ```
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ### Job Lifecycle
 
