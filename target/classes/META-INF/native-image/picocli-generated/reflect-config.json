@@ -1,0 +1,233 @@
+[
+  {
+    "name" : "com.jobqueue.cli.ConfigCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.ConfigCommand$ReloadCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.ConfigCommand$SetCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parameter" },
+      { "name" : "parent" },
+      { "name" : "value" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.ConfigCommand$ShowCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.DLQCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.DLQCommand$ClearCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "confirm" },
+      { "name" : "olderThanDays" },
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.DLQCommand$DeleteCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "jobIds" },
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.DLQCommand$ListCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "limit" },
+      { "name" : "offset" },
+      { "name" : "parent" },
+      { "name" : "verbose" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.DLQCommand$RetryCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "jobIds" },
+      { "name" : "parent" },
+      { "name" : "retryAll" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.DLQCommand$StatsCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.EnqueueCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "jobSpec" },
+      { "name" : "maxRetries" },
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.ListCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "limit" },
+      { "name" : "offset" },
+      { "name" : "parent" },
+      { "name" : "state" },
+      { "name" : "verbose" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.QueueCtl",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "configFile" },
+      { "name" : "dataFile" },
+      { "name" : "verbose" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.StatusCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.WorkerCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.WorkerCommand$StartCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" },
+      { "name" : "workerCount" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.WorkerCommand$StatusCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.cli.WorkerCommand$StopCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "parent" }
+    ]
+  },
+  {
+    "name" : "com.jobqueue.model.JobState",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
+  },
+  {
+    "name" : "java.lang.Integer",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
+  },
+  {
+    "name" : "java.util.Collections$UnmodifiableRandomAccessList",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
+  },
+  {
+    "name" : "picocli.CommandLine$AutoHelpMixin",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "helpRequested" },
+      { "name" : "versionRequested" }
+    ]
+  }
+]
