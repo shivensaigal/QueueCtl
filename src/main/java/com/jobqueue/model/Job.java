@@ -1,4 +1,5 @@
 package com.jobqueue.model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,6 +16,7 @@ import java.util.UUID;
  * Represents a job in the queue system.
  * Contains all necessary information for job execution, tracking, and persistence.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Job {
     private final String id;
     private final String command;
