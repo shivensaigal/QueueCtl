@@ -19,6 +19,23 @@ A production-ready Job Queue System in Java with a command-line interface (`queu
 - Java 17 or higher
 - Maven 3.6 or higher
 
+## Demo — Job Queue System- 
+Watch the full demo here- https://drive.google.com/file/d/1Ex4ACyqo0xsERc6RLe5Ppp_YRUqgPI7y/view?usp=sharing
+(The video shows end-to-end CLI execution from enqueueing to DLQ management)
+
+What the demo shows
+1. Enqueuing jobs (both successful and intentionally failing)
+2. Running multiple worker threads in parallel
+3. Automatic retry and backoff handling
+4. Moving permanently failed jobs to the Dead Letter Queue (DLQ)
+5. Persistent state stored in jobs.json
+6. Configuration management via config.json
+
+For exact setup and commands used, you can follow the Setup Instructions Block as given below. 
+**Tip**- When you run the Start workers command, CLI runs in foreground mode (showing real-time logs).
+Use Ctrl + C to stop workers gracefully or & to run it in the background.
+
+
 ## Setup Instructions
 
 ### 1. Clone and Build
@@ -232,55 +249,7 @@ java -jar target/queuectl.jar worker stop
                        └─────────────────┘
 ```
 
-### Persistence Layer
 
-- **Format**: JSON files for human readability and easy debugging
-- **Atomicity**: Temporary files with atomic moves prevent corruption
-- **Thread Safety**: Read-write locks ensure concurrent access safety
-- **Recovery**: Jobs persist across system restarts
-
-### Worker System
-
-- **Thread Pool**: Configurable number of worker threads
-- **Job Polling**: Workers poll for available jobs with timeout
-- **Graceful Shutdown**: Ongoing jobs complete before termination
-- **Error Handling**: Robust exception handling with detailed logging
-
-### Retry Mechanism
-
-Exponential backoff formula: `delay = base^attempts seconds`
-
-Example with base=2:
-- Attempt 1: 2¹ = 2 seconds
-- Attempt 2: 2² = 4 seconds  
-- Attempt 3: 2³ = 8 seconds
-- Maximum delay capped at 1 hour
-
-## Configuration
-
-Default configuration (`config.json`):
-
-```json
-{
-  "max_retries": 3,
-  "backoff_base": 2,
-  "worker_count": 3,
-  "data_file": "jobs.json",
-  "job_timeout_seconds": 300,
-  "retry_check_interval_seconds": 30
-}
-```
-
-### Configuration Parameters
-
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `max_retries` | Maximum retry attempts for failed jobs | 3 |
-| `backoff_base` | Base for exponential backoff calculation | 2 |
-| `worker_count` | Number of worker threads | 3 |
-| `data_file` | Path to job persistence file | jobs.json |
-| `job_timeout_seconds` | Maximum execution time per job | 300 |
-| `retry_check_interval_seconds` | Interval for retry processing | 30 |
 
 ##  Testing Steps
 
@@ -382,31 +351,6 @@ src/main/java/com/jobqueue/
     └── WorkerManager.java
 ```
 
-## Monitoring & Logging
-
-### Log Files
-
-- `logs/jobqueue.log`: General application logs
-- `logs/job-execution.log`: Detailed job execution logs
-
-### Log Levels
-
-- **INFO**: Normal operations, job lifecycle events
-- **WARN**: Retryable failures, configuration issues  
-- **ERROR**: Permanent failures, system errors
-- **DEBUG**: Detailed troubleshooting information
-
-### Monitoring Commands
-
-```bash
-# Real-time status monitoring
-watch -n 2 'java -jar target/queuectl.jar status'
-
-# Log monitoring
-tail -f logs/jobqueue.log
-tail -f logs/job-execution.log
-```
-
 ## Troubleshooting
 
 ### Common Issues
@@ -442,12 +386,4 @@ tail -f logs/job-execution.log
    # Run with more memory
    java -Xmx2g -jar target/queuectl.jar worker start
    ```
-
-##  Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
 
